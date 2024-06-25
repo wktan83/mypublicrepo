@@ -1,0 +1,17 @@
+name: create_container_image_scan
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  imagescan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Scan container image with Tenable Cloud Security
+      uses: ermetic/actions/container-image/scan@v1
+      with:
+        api-token: ${{ secrets.TENABLE_API_TOKEN }}
+        api-url: https://sg.app.ermetic.com
+        name: ubuntu-latest
