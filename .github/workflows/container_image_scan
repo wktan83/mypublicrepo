@@ -5,4 +5,4 @@
       with:
         api-token: ${{ secrets.TENABLE_API_TOKEN }}
         api-url: https://sg.app.ermetic.com
-        name: Ubuntu-latest
+        name: ubuntu-latest
